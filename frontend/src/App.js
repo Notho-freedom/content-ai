@@ -36,7 +36,7 @@ const AuthProvider = ({ children }) => {
   const fetchUser = async (authToken) => {
     try {
       const res = await axios.get(`${API}/auth/me`, {
-        headers: { Authorization: `Bearer ${token}` }
+        headers: { Authorization: `Bearer ${authToken}` }
       });
       setUser(res.data);
     } catch (e) {
@@ -46,6 +46,14 @@ const AuthProvider = ({ children }) => {
       setLoading(false);
     }
   };
+
+  useEffect(() => {
+    if (token) {
+      fetchUser(token);
+    } else {
+      setLoading(false);
+    }
+  }, [token]);
 
   const login = async (email, password) => {
     const res = await axios.post(`${API}/auth/login`, { email, password });
