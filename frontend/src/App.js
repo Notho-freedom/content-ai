@@ -795,21 +795,20 @@ const HistoryPage = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetchHistory();
-  }, []);
-
-  const fetchHistory = async () => {
-    try {
-      const res = await axios.get(`${API}/history`, {
-        headers: { Authorization: `Bearer ${token}` }
-      });
-      setHistory(res.data);
-    } catch (e) {
-      toast.error("Erreur lors du chargement");
-    } finally {
-      setLoading(false);
-    }
-  };
+    const fetchHistory = async () => {
+      try {
+        const res = await axios.get(`${API}/history`, {
+          headers: { Authorization: `Bearer ${token}` }
+        });
+        setHistory(res.data);
+      } catch (e) {
+        toast.error("Erreur lors du chargement");
+      } finally {
+        setLoading(false);
+      }
+    };
+    if (token) fetchHistory();
+  }, [token]);
 
   const deleteGeneration = async (id) => {
     try {
