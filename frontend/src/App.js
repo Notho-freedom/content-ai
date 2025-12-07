@@ -946,7 +946,7 @@ const PricingPage = () => {
 
       {/* Plans */}
       <div>
-        <h2 className="text-xl font-semibold mb-6">Plans d'abonnement</h2>
+        <h2 className="text-xl font-semibold mb-6">Plans d&apos;abonnement</h2>
         <div className="grid md:grid-cols-3 gap-6">
           {plans.map((plan) => (
             <Card key={plan.id} className={plan.popular ? 'border-violet-500 relative' : ''} data-testid={`plan-${plan.id}`}>
