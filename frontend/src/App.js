@@ -1031,34 +1031,34 @@ const PaymentSuccess = () => {
   const sessionId = searchParams.get('session_id');
 
   useEffect(() => {
-    if (sessionId) {
+    const pollPaymentStatus = async (attempts = 0) => {
+      if (attempts >= 5) {
+        setStatus('timeout');
+        return;
+      }
+
+      try {
+        const res = await axios.get(`${API}/payments/status/${sessionId}`, {
+          headers: { Authorization: `Bearer ${token}` }
+        });
+
+        if (res.data.payment_status === 'paid') {
+          setStatus('success');
+          await refreshUser();
+        } else if (res.data.status === 'expired') {
+          setStatus('expired');
+        } else {
+          setTimeout(() => pollPaymentStatus(attempts + 1), 2000);
+        }
+      } catch (e) {
+        setStatus('error');
+      }
+    };
+
+    if (sessionId && token) {
       pollPaymentStatus();
     }
-  }, [sessionId]);
-
-  const pollPaymentStatus = async (attempts = 0) => {
-    if (attempts >= 5) {
-      setStatus('timeout');
-      return;
-    }
-
-    try {
-      const res = await axios.get(`${API}/payments/status/${sessionId}`, {
-        headers: { Authorization: `Bearer ${token}` }
-      });
-
-      if (res.data.payment_status === 'paid') {
-        setStatus('success');
-        await refreshUser();
-      } else if (res.data.status === 'expired') {
-        setStatus('expired');
-      } else {
-        setTimeout(() => pollPaymentStatus(attempts + 1), 2000);
-      }
-    } catch (e) {
-      setStatus('error');
-    }
-  };
+  }, [sessionId, token, refreshUser]);
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-background p-6">
