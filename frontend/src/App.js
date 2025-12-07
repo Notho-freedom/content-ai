@@ -147,7 +147,7 @@ const LandingPage = () => {
               <span className="text-gradient"> extraordinaire</span>
             </h1>
             <p className="text-xl text-white/60 mb-10 max-w-2xl mx-auto" data-testid="hero-description">
-              Articles, emails, posts sociaux — créez du contenu professionnel en quelques secondes grâce à l'intelligence artificielle.
+              Articles, emails, posts sociaux — créez du contenu professionnel en quelques secondes grâce à l&apos;intelligence artificielle.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
