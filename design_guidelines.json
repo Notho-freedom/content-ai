@@ -1,0 +1,157 @@
+{
+  "identity": {
+    "name": "E1",
+    "archetype": "The Anti-AI Designer",
+    "principles": [
+      "Fusion over Imitation",
+      "Emotion First",
+      "Content is King",
+      "Zoom In",
+      "Negative Space",
+      "Contrast"
+    ]
+  },
+  "typography": {
+    "fonts": {
+      "headings": {
+        "family": "Outfit, sans-serif",
+        "weights": ["500", "700", "900"],
+        "usage": "Landing page headlines, feature titles, major dashboard sections. Tight tracking (-0.02em)."
+      },
+      "body": {
+        "family": "Manrope, sans-serif",
+        "weights": ["400", "500"],
+        "usage": "Paragraphs, UI labels, form inputs. Normal tracking."
+      },
+      "mono": {
+        "family": "JetBrains Mono, monospace",
+        "weights": ["400"],
+        "usage": "Code snippets, AI generation outputs, technical data."
+      }
+    },
+    "rules": [
+      "Never use Inter for Headings.",
+      "Headings > 32px must use tracking-tight.",
+      "Overlines must be Uppercase + tracking-widest + text-xs."
+    ]
+  },
+  "colors": {
+    "palette": {
+      "primary": {
+        "name": "Electric Violet",
+        "hex": "#7c3aed",
+        "tailwind": "violet-600",
+        "usage": "Primary CTAs, active states, brand moments."
+      },
+      "secondary": {
+        "name": "Neon Cyan",
+        "hex": "#06b6d4",
+        "tailwind": "cyan-500",
+        "usage": "AI indicators, success states, gradients."
+      },
+      "background": {
+        "dark": "#050505",
+        "light": "#ffffff",
+        "usage": "App background. Avoid pure black #000000."
+      },
+      "surface": {
+        "dark": "#0a0a0a",
+        "light": "#f8fafc",
+        "usage": "Cards, sidebars, modals."
+      }
+    },
+    "theme_strategy": {
+      "marketing": "Dark Mode Default (Electric & Neon Archetype)",
+      "dashboard": "Light Mode Default (Swiss & High-Contrast Archetype) with Dark Mode Toggle"
+    }
+  },
+  "visual_enhancers": {
+    "borders": {
+      "tracing_beam": "Use for high-value cards. Animated gradient border.",
+      "glass_border": "1px solid rgba(255,255,255,0.1) for dark mode cards."
+    },
+    "shadows": {
+      "glow": "0 0 20px rgba(124, 58, 237, 0.3) for primary actions.",
+      "soft": "0 4px 20px rgba(0,0,0,0.05) for dashboard cards."
+    },
+    "textures": {
+      "noise": "Overlay subtle noise texture on dark backgrounds to prevent banding.",
+      "grid": "Low opacity (5%) grid pattern on dashboard backgrounds."
+    }
+  },
+  "components": {
+    "buttons": {
+      "primary": "Rounded-full or sharp edges. High contrast. Hover: lift + glow.",
+      "secondary": "Ghost or Outline. Hover: bg-accent.",
+      "ai_trigger": "Special style with gradient border or icon animation."
+    },
+    "cards": {
+      "marketing": "Glassmorphism or Tracing Beam style. Padding: p-8.",
+      "dashboard": "Flat, 1px border, no shadow (Swiss style). Padding: p-6."
+    },
+    "inputs": {
+      "style": "Shadcn Input. Customize focus ring to match Primary color.",
+      "behavior": "Show validation state clearly."
+    }
+  },
+  "layout": {
+    "marketing_grid": {
+      "name": "The Tetris Grid",
+      "columns": "grid-cols-1 md:grid-cols-12",
+      "gap": "gap-8 md:gap-12",
+      "rules": "Asymmetry is key. Use col-span-8 for hero, col-span-4 for supporting."
+    },
+    "dashboard_grid": {
+      "name": "The Control Room",
+      "columns": "grid-cols-1 md:grid-cols-4",
+      "gap": "gap-4",
+      "rules": "Dense packing. 100% height utilization. No jagged bottoms."
+    },
+    "spacing": {
+      "scale": "p-4, p-6, p-8, p-12, p-16, p-24, p-32",
+      "rule": "Use 2x more spacing than standard templates."
+    }
+  },
+  "motion": {
+    "library": "Framer Motion",
+    "transitions": {
+      "default": "type: 'spring', stiffness: 300, damping: 30",
+      "hover": "scale: 1.02, y: -2"
+    },
+    "scroll": {
+      "library": "Lenis",
+      "effect": "Smooth momentum scrolling for marketing pages."
+    }
+  },
+  "images": {
+    "hero_abstract": {
+      "url": "https://images.unsplash.com/photo-1647356191320-d7a1f80ca777?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1NzZ8MHwxfHNlYXJjaHwyfHxhYnN0cmFjdCUyMGdsb3dpbmclMjBuZXVyYWwlMjBuZXR3b3JrJTIwdmlzdWFsaXphdGlvbiUyMGRhcmslMjBiYWNrZ3JvdW5kfGVufDB8fHx8MTc2NTA4MjcyMHww&ixlib=rb-4.1.0&q=85",
+      "alt": "Abstract glowing neural network",
+      "usage": "Hero section background or feature visualization"
+    },
+    "feature_workspace": {
+      "url": "https://images.unsplash.com/photo-1636717970273-0a0511ad8cf8?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBtaW5pbWFsaXN0JTIwd29ya3NwYWNlJTIwd2l0aCUyMGxhcHRvcCUyMGNvZmZlZXxlbnwwfHx8fDE3NjUwODI3MjF8MA&ixlib=rb-4.1.0&q=85",
+      "alt": "Modern minimalist workspace",
+      "usage": "Feature section showing 'Where you create'"
+    },
+    "team_collaboration": {
+      "url": "https://images.unsplash.com/photo-1758691737045-3ece61135061?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzl8MHwxfHNlYXJjaHwyfHxjcmVhdGl2ZSUyMHRlYW0lMjBicmFpbnN0b3JtaW5nJTIwbWVldGluZ3xlbnwwfHx8fDE3NjUwODI3MjN8MA&ixlib=rb-4.1.0&q=85",
+      "alt": "Team brainstorming",
+      "usage": "About page or 'Built for teams' section"
+    }
+  },
+  "universal_guidelines": [
+    "Avoid generic 'AI slop' aesthetic.",
+    "Dark colors must be used independently, not as gradients.",
+    "Create depth through layered design elements (z-index).",
+    "Use glass-morphism with backdrop-filter: blur(12px).",
+    "NEVER use transition: all.",
+    "NEVER center align the App container.",
+    "Use pill-shaped or sharp buttons with interaction animations.",
+    "NO AI emoji characters (🤖, 🧠, etc).",
+    "Use 2-3x more spacing than comfortable.",
+    "Add subtle grain textures/noise overlays.",
+    "All interactive elements MUST have data-testid attributes."
+  ],
+  "instructions_to_main_agent": "Follow these guidelines strictly. Use the provided image URLs. Implement the 'Tetris Grid' for the landing page and 'Control Room' for the dashboard. Use Shadcn components but customize them to match the 'Electric Violet' and 'Deep Void' theme. Ensure dark mode is default for marketing."
+}
