@@ -266,7 +266,6 @@ async def create_checkout(request: CheckoutRequest, http_request: Request, user:
         amount = PLANS[package_type]["price"]
         credits = PLANS[package_type]["credits"]
         purchase_type = "subscription"
-        description = f"Plan {PLANS[package_type]['name']}"
     elif package_type in CREDIT_PACKAGES:
         amount = CREDIT_PACKAGES[package_type]["price"]
         credits = CREDIT_PACKAGES[package_type]["credits"]
