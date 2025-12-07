@@ -566,19 +566,18 @@ const GeneratorPage = () => {
   const [stats, setStats] = useState(null);
 
   useEffect(() => {
-    fetchStats();
-  }, []);
-
-  const fetchStats = async () => {
-    try {
-      const res = await axios.get(`${API}/stats`, {
-        headers: { Authorization: `Bearer ${token}` }
-      });
-      setStats(res.data);
-    } catch (e) {
-      console.error(e);
-    }
-  };
+    const fetchStats = async () => {
+      try {
+        const res = await axios.get(`${API}/stats`, {
+          headers: { Authorization: `Bearer ${token}` }
+        });
+        setStats(res.data);
+      } catch (e) {
+        console.error(e);
+      }
+    };
+    if (token) fetchStats();
+  }, [token]);
 
   const handleGenerate = async () => {
     if (!prompt.trim()) {
